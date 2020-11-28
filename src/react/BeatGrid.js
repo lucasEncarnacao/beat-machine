@@ -3,7 +3,14 @@ import { Grid } from "@material-ui/core";
 import BeatColumn from "./BeatColumn";
 
 const BeatGrid = (props) => {
-  const SOUNDS = ["kick", "snare", "hi-hat"];
+  const SOUNDS = [
+    "Clap",
+    "Hi-Hat",
+    "Snare",
+    "Alt_Snare",
+    "Alt_Snare_2",
+    "Kick",
+  ];
   const beats = [...Array(16).keys()];
 
   const columns = beats.map((i) => {
