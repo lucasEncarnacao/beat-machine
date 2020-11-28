@@ -3,12 +3,10 @@ import { Grid } from "@material-ui/core";
 import BeatSquare from "./BeatSquare";
 
 const BeatColumn = (props) => {
-  const { column, instruments } = props;
+  const { column, sounds } = props;
 
-  const beatColumn = instruments.map((instrument) => {
-    return (
-      <BeatSquare key={instrument} column={column} instrument={instrument} />
-    );
+  const beatColumn = sounds.map((sound) => {
+    return <BeatSquare key={sound} column={column} sound={sound} />;
   });
 
   return (

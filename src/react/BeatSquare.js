@@ -2,16 +2,16 @@ import React from "react";
 import { Button, Grid } from "@material-ui/core";
 
 const BeatSquare = (props) => {
-  const { column, instrument } = props;
+  const { column, sound } = props;
 
   const squareClick = (event) => {
-    console.log(instrument + column);
+    console.log(sound + column);
   };
 
   return (
     <Grid item>
       <Button variant="contained" color="primary" onClick={squareClick}>
-        {instrument}
+        {sound}
       </Button>
     </Grid>
   );
