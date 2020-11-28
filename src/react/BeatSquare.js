@@ -1,11 +1,13 @@
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
+import WavHelper from "../helpers/WavHelper";
 
 const BeatSquare = (props) => {
-  const { column, sound } = props;
+  const { sound } = props;
+  const wav = WavHelper.getWav(sound, 1);
 
   const squareClick = (event) => {
-    console.log(sound + column);
+    wav.play();
   };
 
   return (

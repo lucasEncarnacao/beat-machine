@@ -6,7 +6,7 @@ const BeatColumn = (props) => {
   const { column, sounds } = props;
 
   const beatColumn = sounds.map((sound) => {
-    return <BeatSquare key={sound} column={column} sound={sound} />;
+    return <BeatSquare key={sound} sound={sound} />;
   });
 
   return (
