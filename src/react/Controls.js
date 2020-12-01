@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, TextField } from "@material-ui/core";
+import { Button, InputAdornment, TextField } from "@material-ui/core";
 import Scheduler from "../helpers/Scheduler";
 
 const Controls = (props) => {
@@ -42,10 +42,13 @@ const Controls = (props) => {
         label="Tempo"
         type="number"
         value={tempo}
+        variant="filled"
         onChange={changeTempo}
         InputLabelProps={{ shrink: true }}
-        InputProps={{ inputProps: { min: 40, max: 220 } }}
-        variant="filled"
+        InputProps={{
+          inputProps: { min: 40, max: 220 },
+          endAdornment: <InputAdornment position="start">BPM</InputAdornment>,
+        }}
         error={error.isError}
         helperText={error.message}
       />
