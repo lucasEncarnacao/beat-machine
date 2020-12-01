@@ -1,9 +1,10 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import BeatColumn from "./BeatColumn";
+import ActiveSounds from "../helpers/ActiveSounds";
 
 const BeatGrid = (props) => {
-  const SOUNDS = [
+  const SOUND_NAMES = [
     "Clap",
     "Hi-Hat",
     "Snare",
@@ -11,12 +12,14 @@ const BeatGrid = (props) => {
     "Alt_Snare_2",
     "Kick",
   ];
-  const beats = [...Array(16).keys()];
+  const quarterBeats = [...Array(16).keys()];
 
-  const columns = beats.map((i) => {
+  ActiveSounds.setUpActiveSounds(SOUND_NAMES, quarterBeats);
+
+  const columns = quarterBeats.map((i) => {
     return (
       <Grid item key={i}>
-        <BeatColumn column={i + 1} sounds={SOUNDS} />
+        <BeatColumn column={i + 1} soundNames={SOUND_NAMES} />
       </Grid>
     );
   });

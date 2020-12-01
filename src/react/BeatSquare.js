@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Grid } from "@material-ui/core";
-import WavHelper from "../helpers/WavHelper";
+import ActiveSounds from "../helpers/ActiveSounds";
 
 const BeatSquare = (props) => {
-  const { sound } = props;
-  const wav = WavHelper.getWav(sound, 1);
+  const { column, soundName } = props;
+  const [isActive, setIsActive] = useState(false);
+  let color = "primary";
 
   const squareClick = (event) => {
-    wav.play();
+    ActiveSounds.setActiveSound(column, soundName, !isActive);
+    setIsActive(!isActive);
   };
+
+  if (isActive) {
+    color = "secondary";
+  }
 
   return (
     <Grid item>
-      <Button variant="contained" color="primary" onClick={squareClick}>
-        {sound}
+      <Button variant="contained" color={color} onClick={squareClick}>
+        {soundName}
       </Button>
     </Grid>
   );
