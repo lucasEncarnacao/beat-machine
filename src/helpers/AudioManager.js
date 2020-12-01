@@ -1,6 +1,6 @@
 import { Howl } from "howler";
 
-class WavHelper {
+class AudioManager {
   static getWav = (soundName, number) => {
     const wavFileName = `${soundName}_${number}`;
 
@@ -12,4 +12,4 @@ class WavHelper {
   };
 }
 
-export default WavHelper;
+export default AudioManager;
