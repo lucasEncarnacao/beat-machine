@@ -24,13 +24,17 @@ class ActiveSounds {
   };
 
   static playActiveSoundColumn = (column) => {
-    const activeColumnSounds = this.activeSounds[column - 1].filter(
-      (soundObj) => soundObj.isActive
-    );
+    const activeColumnSounds = this.getActiveSoundsFromColumn(column);
 
     activeColumnSounds.forEach((soundObj) => {
       soundObj.soundFile.play();
     });
+  };
+
+  static getActiveSoundsFromColumn = (column) => {
+    return this.activeSounds[column - 1]?.filter(
+      (soundObj) => soundObj.isActive
+    );
   };
 }
 

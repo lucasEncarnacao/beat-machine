@@ -2,6 +2,7 @@ import React from "react";
 import BeatGrid from "./BeatGrid";
 import Controls from "./Controls";
 import VisualTracker from "./VisualTracker";
+import Visualizer from "./Visualizer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Controls />
       <BeatGrid />
       <VisualTracker />
+      <Visualizer />
     </>
   );
 }
