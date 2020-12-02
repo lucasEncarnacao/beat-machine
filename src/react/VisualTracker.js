@@ -4,7 +4,7 @@ import Scheduler from "../helpers/Scheduler";
 const VisualTracker = (props) => {
   const [activeColumn, setActiveColumn] = useState(1);
 
-  Scheduler.ping = (columnNum) => setActiveColumn(columnNum);
+  Scheduler.pingTracker = (columnNum) => setActiveColumn(columnNum);
 
   let activeColPosition = (activeColumn - 1) * 65;
 

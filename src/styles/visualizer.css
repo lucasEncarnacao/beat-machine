@@ -1,0 +1,59 @@
+.color-1 {
+  --color: blue;
+}
+
+.color-2 {
+  --color: red;
+}
+
+.color-3 {
+  --color: yellow;
+}
+
+.color-4 {
+  --color: green;
+}
+
+.color-5 {
+  --color: purple;
+}
+
+.color-6 {
+  --color: orange;
+}
+
+.pulse-in {
+  height: 250px;
+  width: 25px;
+  transform-origin: 50% 100%;
+  animation: pulse-in 1s ease;
+}
+
+.pulse-out {
+  height: 250px;
+  width: 25px;
+  transform-origin: 50% 100%;
+  animation: pulse-out 2s ease;
+}
+
+@keyframes pulse-in {
+  0% {
+    transform: scaleY(0);
+    background-color: var(--color);
+  }
+  10% {
+    transform: scaleY(1);
+    background-color: var(--color);
+  }
+}
+
+@keyframes pulse-out {
+  0% {
+    transform: scaleY(1);
+    background-color: var(--color);
+  }
+  100% {
+    transform: scaleY(0);
+    background-color: var(--color);
+  }
+}
