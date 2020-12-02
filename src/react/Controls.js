@@ -4,17 +4,21 @@ import Scheduler from "../helpers/Scheduler";
 
 const Controls = (props) => {
   const [tempo, setTempo] = useState(Scheduler.tempo);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState({
     isError: false,
     message: "",
   });
+  let icon = null;
 
-  const playClick = (event) => {
-    Scheduler.start();
-  };
-
-  const stopClick = (event) => {
-    Scheduler.stop();
+  const playStopClick = (event) => {
+    if (isPlaying) {
+      Scheduler.stop();
+      setIsPlaying(false);
+    } else {
+      Scheduler.start();
+      setIsPlaying(true);
+    }
   };
 
   const changeTempo = (event) => {
@@ -30,13 +34,16 @@ const Controls = (props) => {
     Scheduler.tempo = newTempo;
   };
 
+  if (isPlaying) {
+    icon = "Stop";
+  } else {
+    icon = "Play";
+  }
+
   return (
     <>
-      <Button variant="contained" color="secondary" onClick={playClick}>
-        Play
-      </Button>
-      <Button variant="contained" color="secondary" onClick={stopClick}>
-        Stop
+      <Button variant="contained" color="secondary" onClick={playStopClick}>
+        {icon}
       </Button>
       <TextField
         label="Tempo"
