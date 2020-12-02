@@ -18,9 +18,7 @@ const BeatSquare = (props) => {
 
   return (
     <Grid item>
-      <Button variant="contained" color={color} onClick={squareClick}>
-        {soundName}
-      </Button>
+      <Button variant="contained" color={color} onClick={squareClick} />
     </Grid>
   );
 };
