@@ -1,49 +1,51 @@
 .color-1 {
-  --color: blue;
+  --color: #9e2994;
 }
 
 .color-2 {
-  --color: red;
+  --color: #bb2b84;
 }
 
 .color-3 {
-  --color: yellow;
+  --color: #cf2c7a;
 }
 
 .color-4 {
-  --color: green;
+  --color: #ff2e5f;
 }
 
 .color-5 {
-  --color: purple;
+  --color: #ff8758;
 }
 
 .color-6 {
-  --color: orange;
+  --color: #ffd952;
 }
 
 .pulse-in {
-  height: 250px;
+  height: 200px;
   width: 25px;
   transform-origin: 50% 100%;
   animation: pulse-in 1s ease;
 }
 
 .pulse-out {
-  height: 250px;
+  height: 200px;
   width: 25px;
   transform-origin: 50% 100%;
-  animation: pulse-out 2s ease;
+  animation: pulse-out 1s ease;
 }
 
 @keyframes pulse-in {
   0% {
     transform: scaleY(0);
     background-color: var(--color);
+    box-shadow: 5px 0px 5px grey;
   }
   10% {
     transform: scaleY(1);
     background-color: var(--color);
+    box-shadow: 5px 0px 5px grey;
   }
 }
 
@@ -51,9 +53,11 @@
   0% {
     transform: scaleY(1);
     background-color: var(--color);
+    box-shadow: 5px 0px 5px grey;
   }
   100% {
     transform: scaleY(0);
     background-color: var(--color);
+    box-shadow: 5px 0px 5px grey;
   }
 }

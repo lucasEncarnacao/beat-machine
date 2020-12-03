@@ -1,17 +1,15 @@
 import React from "react";
-import BeatGrid from "./BeatGrid";
-import Controls from "./Controls";
-import VisualTracker from "./VisualTracker";
-import Visualizer from "./Visualizer";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./theme";
+import LandingPage from "./LandingPage";
+import BeatMachinePage from "./BeatMachinePage";
 
 function App() {
   return (
-    <>
-      <Controls />
-      <BeatGrid />
-      <VisualTracker />
-      <Visualizer />
-    </>
+    <ThemeProvider theme={theme}>
+      <LandingPage />
+      <BeatMachinePage />
+    </ThemeProvider>
   );
 }
 
