@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, InputAdornment, TextField } from "@material-ui/core";
+import { Button, Grid, InputAdornment, TextField } from "@material-ui/core";
 import Scheduler from "../helpers/Scheduler";
 
 const Controls = (props) => {
@@ -41,25 +41,33 @@ const Controls = (props) => {
   }
 
   return (
-    <>
-      <Button variant="contained" color="secondary" onClick={playStopClick}>
-        {icon}
-      </Button>
-      <TextField
-        label="Tempo"
-        type="number"
-        value={tempo}
-        variant="filled"
-        onChange={changeTempo}
-        InputLabelProps={{ shrink: true }}
-        InputProps={{
-          inputProps: { min: 40, max: 220 },
-          endAdornment: <InputAdornment position="start">BPM</InputAdornment>,
-        }}
-        error={error.isError}
-        helperText={error.message}
-      />
-    </>
+    <Grid container justify="center" alignItems="center" spacing={2}>
+      <Grid item>
+        <Button
+          variant="contained"
+          size="large"
+          color="secondary"
+          onClick={playStopClick}
+        >
+          {icon}
+        </Button>
+      </Grid>
+      <Grid item>
+        <TextField
+          label="Tempo"
+          type="number"
+          value={tempo}
+          onChange={changeTempo}
+          InputLabelProps={{ shrink: true }}
+          InputProps={{
+            inputProps: { min: 40, max: 220 },
+            endAdornment: <InputAdornment position="start">BPM</InputAdornment>,
+          }}
+          error={error.isError}
+          helperText={error.message}
+        />
+      </Grid>
+    </Grid>
   );
 };
 

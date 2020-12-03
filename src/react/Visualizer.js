@@ -25,13 +25,13 @@ const Visualizer = (props) => {
 
     return (
       <Grid item key={soundName}>
-        <SoundColumn soundNum={index + 1} isActive={isActive} />
+        <SoundColumn soundNum={6 - index} isActive={isActive} />
       </Grid>
     );
   });
 
   return (
-    <Grid container spacing={1}>
+    <Grid container direction="row-reverse" spacing={1}>
       {soundColumns}
     </Grid>
   );
