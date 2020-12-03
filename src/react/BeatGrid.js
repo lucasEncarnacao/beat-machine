@@ -71,9 +71,7 @@ const BeatGrid = (props) => {
 
         <Grid item xs={2} />
         <Grid item xs={10}>
-          <Box pl={1}>
-            <VisualTracker />
-          </Box>
+          <VisualTracker />
         </Grid>
       </Grid>
     </Box>

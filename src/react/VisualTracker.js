@@ -1,4 +1,3 @@
-import { Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import Scheduler from "../helpers/Scheduler";
 
@@ -8,14 +7,16 @@ const VisualTracker = (props) => {
 
   Scheduler.pingTracker = (columnNum) => setActiveColumn(columnNum);
 
-  let space = (activeColumn / 4) * 8;
+  let space = Math.floor((activeColumn - 1) / 4) * 2;
 
-  let activeColPosition = (activeColumn - 1) * ((width - 18) / 16) + space;
+  let activeColPosition = (activeColumn - 1) * ((width + 8) / 16) + space + 10;
 
   return (
-    <Typography variant="h3" style={{ marginLeft: activeColPosition }}>
-      ^
-    </Typography>
+    <img
+      src="upArrow.png"
+      alt="Tracker"
+      style={{ marginLeft: activeColPosition, width: "20px" }}
+    />
   );
 };
 
