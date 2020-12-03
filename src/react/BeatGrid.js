@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import ScrollAnimation from "react-animate-on-scroll";
 import BeatColumn from "./BeatColumn";
 import ActiveSounds from "../helpers/ActiveSounds";
 import SoundLabels from "./SoundLabels";
@@ -29,9 +30,12 @@ const BeatGrid = (props) => {
 
   const columns = [1, 2, 3, 4].map((i) => {
     const beat = [1, 2, 3, 4].map((j) => {
+      let columnNum = j + (4 * i - 4);
       return (
         <Grid item xs key={j}>
-          <BeatColumn column={j + (4 * i - 4)} soundNames={SOUND_NAMES} />
+          <ScrollAnimation animateIn="fadeIn" delay={50 * columnNum}>
+            <BeatColumn column={columnNum} soundNames={SOUND_NAMES} />
+          </ScrollAnimation>
         </Grid>
       );
     });
